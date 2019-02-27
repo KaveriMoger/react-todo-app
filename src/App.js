@@ -22,7 +22,6 @@ state = {
 	 <input type="text" name="age" placeholder="age" onChange={this.inputChange} value={this.state.age}/>
 	 
       </div>
-	  //React.createElement('div', {className: 'App'}, React.createElement('h1',null, 'This is react app'))
     );
  }
   
