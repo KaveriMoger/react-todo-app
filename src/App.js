@@ -4,30 +4,47 @@ import Person from "./Person/Person"
 import DataList from "./DataList"
 import data from "./data"
 
-
 class App extends Component {
-state = { 
-	name: "",
-	age: ""
+	constructor() {
+		super();
+		this.state = {
+			name: "",
+			age: "",
+			data: data
+		}
+		this.addItem = this.addItem.bind(this);
+		this.inputChange = this.inputChange.bind(this);
+	}
 
-}
+	inputChange(event) {
+		const {name, value} = event.target
+			this.setState({
+					[name]: value
+		});
+	}
 
- render() {
+	addItem(event) {
+		let newArr = this.state.data;
+		newArr.push({name: this.state.name, age: this.state.age})
+		this.setState({
+			data: newArr
+		})
+	}
+
+	render() {
     return (
      <div className="App">
-      <h1>hello,this is react app</h1>
-	 {data.map(entry => <DataList key={entry.id} name={entry.name} age={entry.age} />)}
-	 <h1>To add new Item</h1>
-	 <input type="text" name="name" placeholder="name" onChange={this.inputChange} value={this.state.name}/>
-	 <input type="text" name="age" placeholder="age" onChange={this.inputChange} value={this.state.age}/>
-	 
-      </div>
+	      <h1>hello,this is react app</h1>
+		 		{this.state.data.map(entry => <DataList key={entry.id} name={entry.name} age={entry.age} />)}
+			  <h1>To add new Item</h1>
+			  <input type="text" name="name" placeholder="name"
+				onChange={this.inputChange} value={this.state.name}/>
+			  <input type="text" name="age" placeholder="age"
+				 onChange={this.inputChange} value={this.state.age}/>
+				<button onClick={this.addItem}>Add to list</button>
+	   </div>
     );
- }
-  
-
+		}
 }
 
 export default App;
-
-
