@@ -1,5 +1,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## How to setup the project?
+
+ * Clone the project
+ * Install nodejs from - https://nodejs.org/en/
+ * Install yarn using - https://chocolatey.org/
+ * `choco install yarn `
+ * Inside project run yarn
+ * To run the project use command `yarn start`
+ * Linting on particular file ` yarn eslint .src/<file_name>
+
 ## Available Scripts
 
 In the project directory, you can run:
