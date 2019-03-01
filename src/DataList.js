@@ -1,6 +1,5 @@
 import React from "react"
 
-
 class DataList extends React.Component {
 	constructor(props) {
 		super()
@@ -14,7 +13,6 @@ class DataList extends React.Component {
 			</div>
 		 )
 	}
-
 }
 
 export default DataList

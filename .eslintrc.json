@@ -11,12 +11,13 @@
   "rules": {
     "quotes": ["error", "double"]
   },
- 
+
 	"globals": {
 	    "Promise": "off",
         "var1": "writable",
         "var2": "readonly"
     },
+  "extends": ["airbnb", "prettier"],
 	"plugins": ["prettier"],
   "overrides": [
     {
