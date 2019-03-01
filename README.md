@@ -8,7 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
  * `choco install yarn `
  * Inside project run yarn
  * To run the project use command `yarn start`
- * Linting on particular file ` yarn eslint .src/<file_name>
+ * Linting on particular file ` yarn eslint .src/<file_name>`
 
 ## Available Scripts
 
