@@ -1,5 +1,6 @@
 import React from "react"
 import { connect } from "react-redux";
+import Style from "./todo.less"
 
 const mapStateToProps = state => {
 	return {
@@ -11,16 +12,15 @@ const mapStateToProps = state => {
 const ConnectedList = ({articles}) => (
   <div>
     {articles.map(el => (
-      <div>
-        <h1 key={el.id}>
-Name:
+      <div  className={Style.list}>
+        <h3 key={el.id}>
           {el.title}
-        </h1>
-        <h3>
-          {" "}
-Age:
-          {el.age}
         </h3>
+      <div>
+        <h4>
+          {" "}
+          {el.age}
+        </h4>
       </div>
 	))}
   </div>
