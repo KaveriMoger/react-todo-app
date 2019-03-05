@@ -45,7 +45,7 @@ class ConnectedForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
       <div className="form-group">
-        <label>Title</label>
+        <label>Person Name</label>
         <input type="text"
         className="form-control"
         id="title"

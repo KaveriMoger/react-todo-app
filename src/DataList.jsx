@@ -16,13 +16,12 @@ const ConnectedList = ({articles}) => (
         <h3 key={el.id}>
           {el.title}
         </h3>
-      <div>
         <h4>
           {" "}
           {el.age}
         </h4>
       </div>
-	))}
+		))}
   </div>
 );
 
