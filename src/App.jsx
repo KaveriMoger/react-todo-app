@@ -1,6 +1,5 @@
 import React, { Component, } from "react";
-import "./App.css";
-import DataList from "./DataList"
+import DataList from "./DataList.jsx"
 import data from "./data"
 
 class App extends Component {
@@ -35,7 +34,8 @@ class App extends Component {
       <div className="App">
         <h1>hello,this is react app</h1>
         {this.state.data.map(entry => <DataList key={entry.id} name={entry.name} age={entry.age} />)}
-        <h1>To add new Item</h1>
+<div className="List">
+				<h1>To add new Item</h1>
         <input
           type="text"
           name="name"
@@ -51,6 +51,8 @@ class App extends Component {
           value={this.state.age}
         />
         <button onClick={this.addItem}>Add to list</button>
+				</div>
+
       </div>
     );
 		}
