@@ -1,6 +1,5 @@
 import React, { Component, } from "react";
-import "./App.css";
-import DataList from "./DataList"
+import DataList from "./DataList.jsx"
 import data from "./data"
 
 class App extends Component {
@@ -53,7 +52,7 @@ class App extends Component {
         />
         <button onClick={this.addItem}>Add to list</button>
 				</div>
-				
+
       </div>
     );
 		}
