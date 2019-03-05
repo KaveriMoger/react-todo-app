@@ -2,10 +2,11 @@ import React from "react"
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
-    return {
-        articles: state.articles
-    };
+	return {
+		articles: state.articles
+	};
 };
+
 
 const ConnectedList = ({articles}) => (
   <div>
@@ -13,7 +14,7 @@ const ConnectedList = ({articles}) => (
       <div>
         <h1 key={el.id}>
 Name:
-          {el.name}
+          {el.title}
         </h1>
         <h3>
           {" "}
@@ -21,7 +22,7 @@ Age:
           {el.age}
         </h3>
       </div>
-    ))}
+	))}
   </div>
 );
 
