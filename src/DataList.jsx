@@ -14,7 +14,7 @@ const ConnectedList = ({articles}) => (
     {articles.map(el => (
       <div  className={Style.list}>
         <h3 key={el.id}>
-          {el.title}
+          {el.name}
         </h3>
         <h4>
           {" "}
