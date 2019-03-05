@@ -1,19 +1,29 @@
 import React from "react"
-import Style from "./todo.less"
+import { connect } from "react-redux";
 
-class DataList extends React.Component {
-	constructor(props) {
-		super()
-	}
+const mapStateToProps = state => {
+    return {
+        articles: state.articles
+    };
+};
 
-	render() {
-		return(
-			<div className={Style.list}>
-			<h1>Name: {this.props.name}</h1>
-			<h3>Age: {this.props.age}</h3>
-			</div>
-		 )
-	}
-}
+const ConnectedList = ({articles}) => (
+  <div>
+    {articles.map(el => (
+      <div>
+        <h1 key={el.id}>
+Name:
+          {el.name}
+        </h1>
+        <h3>
+          {" "}
+Age:
+          {el.age}
+        </h3>
+      </div>
+    ))}
+  </div>
+);
 
-export default DataList
+const List = connect(mapStateToProps) (ConnectedList);
+export default List;

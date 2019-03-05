@@ -1,61 +1,17 @@
-import React, { Component, } from "react";
-import DataList from "./DataList.jsx"
-import data from "./data"
+import React from "react";
+import List from "./DataList.jsx";
+import Form from "./Form.jsx";
 
-class App extends Component {
-	constructor() {
-		super();
-		this.state = {
-			name: "",
-			age: "",
-			data
-		}
-		this.addItem = this.addItem.bind(this);
-		this.inputChange = this.inputChange.bind(this);
-	}
-
-	inputChange(event) {
-		const {name, value} = event.target
-			this.setState({
-					[name]: value
-		});
-	}
-
-	addItem() {
-		const newArr = this.state.data;
-		newArr.push({name: this.state.name, age: this.state.age})
-		this.setState({
-			data: newArr
-		})
-	}
-
-	render() {
-    return (
-      <div className="App">
-        <h1>hello,this is react app</h1>
-        {this.state.data.map(entry => <DataList key={entry.id} name={entry.name} age={entry.age} />)}
-<div className="List">
-				<h1>To add new Item</h1>
-        <input
-          type="text"
-          name="name"
-          placeholder="name"
-          onChange={this.inputChange}
-          value={this.state.name}
-        />
-        <input
-          type="text"
-          name="age"
-          placeholder="age"
-          onChange={this.inputChange}
-          value={this.state.age}
-        />
-        <button onClick={this.addItem}>Add to list</button>
-				</div>
-
-      </div>
-    );
-		}
-}
-
+const App = () => (
+  <div className="row mt-5">
+    <div className="col-md-4 offset-md-1">
+      <h2>Articles</h2>
+      <List />
+    </div>
+    <div className="col-md-4 offset-md-1">
+      <h2>Add a new article</h2>
+      <Form />
+    </div>
+  </div>
+);
 export default App;
