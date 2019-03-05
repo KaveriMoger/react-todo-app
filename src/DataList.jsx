@@ -1,27 +1,27 @@
 import React from "react"
 import { connect } from "react-redux";
+import Style from "./todo.less"
 
 const mapStateToProps = state => {
-    return {
-        articles: state.articles
-    };
+	return {
+		articles: state.articles
+	};
 };
+
 
 const ConnectedList = ({articles}) => (
   <div>
     {articles.map(el => (
-      <div>
-        <h1 key={el.id}>
-Name:
-          {el.name}
-        </h1>
-        <h3>
-          {" "}
-Age:
-          {el.age}
+      <div  className={Style.list}>
+        <h3 key={el.id}>
+          {el.title}
         </h3>
+        <h4>
+          {" "}
+          {el.age}
+        </h4>
       </div>
-    ))}
+	))}
   </div>
 );
 
