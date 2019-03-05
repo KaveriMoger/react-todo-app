@@ -14,7 +14,7 @@ const ConnectedList = ({articles}) => (
       <div>
         <h1 key={el.id}>
 Name:
-          {el.name}
+          {el.title}
         </h1>
         <h3>
           {" "}
@@ -25,7 +25,7 @@ Age:
 	))}
   </div>
 );
-	
+
 const List = connect(mapStateToProps) (ConnectedList);
 export default List;
 
