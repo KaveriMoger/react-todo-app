@@ -7,4 +7,4 @@ import $ from 'jquery';
 import Bootstrap from "bootstrap/dist/css/bootstrap.css"
 
 
-ReactDOM.render(<Provider store = {Store}><App /></Provider>, document.getElementById("app"));
+  ReactDOM.render(<Provider store = {Store}><App /></Provider>, document.getElementById("app"));
