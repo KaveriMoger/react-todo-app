@@ -31,12 +31,11 @@ class ConnectedForm extends React.Component {
     const title = this.state.title;
     const age = this.state.age;
     const id = uuidv1();
-    // firebase.database().ref('messages').push({
-    //   title: title,
-    //   age: age,
-    //   id: id
-    // });
-    console.log(firebase.auth());
+    firebase.database().ref('articles').push({
+      title: title,
+      age: age,
+      id: id
+    });
     // this.props.addArticle({
     //   title, id, age
     // });
