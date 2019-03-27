@@ -7,17 +7,37 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js'
   },
+  resolve: {
+    modules: ['node_modules'],
+    alias: {
+      public: path.join(__dirname, './public')
+    }
+  },
   devServer: {
+    historyApiFallback: true,
     contentBase: './dist'
   },
+
   module: {
    rules: [
+     { test: /\.(png|jpg)$/,
+       loader: 'url-loader',
+     },
+
+     {
+       test: /\.(png|jpg|gif)$/,
+       loader: 'file-loader',
+       options: {
+          publicPath: 'img',
+        },
+     },
      {
        test: /\.(js|jsx)$/,
        include: path.resolve(__dirname, 'src'),
        exclude: /node_modules/,
        loader: 'babel-loader'
      },
+
      {
       test: /\.less$/,
       use: [{
