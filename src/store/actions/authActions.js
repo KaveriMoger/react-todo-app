@@ -23,3 +23,12 @@ export const signOut = () => {
     });
   }
 }
+
+// export const createUser = () => {
+//   return (dispatch, getState, {getFirebase, getFirestore}) => {
+//     const firebase = getFirebase();
+//     const firestore = getFirestore();
+//
+//     firebase.auth.
+//   }
+// }
