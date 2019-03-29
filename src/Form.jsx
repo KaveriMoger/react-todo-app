@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import uuidv1 from "uuid";
 import { addArticle } from "./js/actions/index";
+import firebase from "./Firebase.js"
 
 function mapDispatchToProps (dispatch) {
   return {
@@ -30,9 +31,15 @@ class ConnectedForm extends React.Component {
     const title = this.state.title;
     const age = this.state.age;
     const id = uuidv1();
-    this.props.addArticle({
-      title, id, age
+    firebase.database().ref('articles').push({
+      title: title,
+      age: age,
+      id: id
     });
+    // this.props.addArticle({
+    //   title, id, age
+    // });
+
     this.setState({
       title: "",
       age: ""
