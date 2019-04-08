@@ -2,9 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { firestoreConnect } from "react-redux-firebase"
+import { Redirect } from 'react-router-dom'
 
 const TodoDetails = (props) => {
-  const { todo } = props
+  const { todo,auth } = props
+  if(!auth.uid) return <Redirect to='/signin' />
   if (todo) {
   return (
     <div className="container section todo-details">
@@ -37,7 +39,8 @@ const mapStateToProps = (state,myProps) => {
   const todos = state.firestore.data.todo
   const todo = todos ? todos[id] : null
   return {
-    todo: todo
+    todo: todo,
+    auth: state.firebase.auth
   }
 }
 
